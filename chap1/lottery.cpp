@@ -2,7 +2,7 @@
 
 using namespace std;
 
-#define MAX_N 1000
+#define MAX_N 10000000
 
 int n, m, k[MAX_N];
 int kk[MAX_N * MAX_N];
