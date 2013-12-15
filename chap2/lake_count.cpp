@@ -1,12 +1,13 @@
 #include <iostream>
-#include <fstream>
+#include "a.h"
 
-#define N 10
-#define M 12
+#define MAX_N 100
+#define MAX_M 100
 
 using namespace std;
 
-char lake[10][12];
+int N, M;
+char lake[MAX_N][MAX_M];
 
 void dfs(int x, int y) {
   lake[x][y] = '.';
@@ -33,40 +34,11 @@ void solve() {
   printf("%d\n", res);
 }
 
-void dump_lake() {
-  cout << "------------- dump lake" << endl;
-  for (int i = 0; i< 10; i++) {
-    for (int j = 0; j< 12; j++)
-      cout << lake[i][j] << " ";
-    cout << endl;
-  }
-}
-
 int main() {
-  for (int i = 0; i< 10; i++)
-    for (int j = 0; j< 12; j++)
-      lake[i][j] = '.';
-
-  ifstream infile;
-  string line;
-  int row = 0;
-  
-  infile.open("lake_count.txt");
-
-  while (!infile.eof()) {
-    getline(infile, line);
-
-    int col = 0;
-    const char* buf = line.c_str();
-
-    while (*buf) {
-      lake[col][row] = *buf;
-      col++;  
-      buf++;
-    }
-    row++;
-  }
-  infile.close();
+  pair<int, int> p = parse_data(lake, "lake_count.txt");
+  N = p.first;
+  M = p.second;
+  dump(lake, N, M);
   solve();
   return 0;
 }
