@@ -60,7 +60,7 @@ int main() {
     const char* buf = line.c_str();
 
     while (*buf) {
-      lake[row][col] = *buf;
+      lake[col][row] = *buf;
       col++;  
       buf++;
     }

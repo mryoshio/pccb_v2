@@ -7,8 +7,7 @@
 
 using namespace std;
 
-//const int INF = 1000000000;
-const int INF = 99;
+const int INF = 1000000000;
 
 typedef pair<int , int> P;
 
@@ -88,12 +87,14 @@ int main() {
     int col = 0;
 
     while (*buf) {
-      maze[row][col] = *buf;
+      maze[col][row] = *buf;
       switch (*buf) {
       case 'S':
-          sx = col, sy = row;
+        sx = col, sy = row;
+        break;
       case 'G':
-          gx = col, gy = row;
+        gx = col, gy = row;
+        break;
       }
       col++;
       buf++;
@@ -103,7 +104,5 @@ int main() {
   n = row - 1;
   infile.close();
   solve();
-  dump_lab();
-  dump_d();
   return 0;
 }
