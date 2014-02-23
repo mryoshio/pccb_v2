@@ -11,7 +11,7 @@ item ITEMS[101];
 int dp[101][10001];
 
 int calc(int i, int w_limit) {
-  if (dp[i][w_limit] > 0)
+  if (dp[i][w_limit] >= 0)
     return dp[i][w_limit];
     
   int v;
