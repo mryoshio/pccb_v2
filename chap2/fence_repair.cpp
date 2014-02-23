@@ -45,6 +45,5 @@ int main() {
   for (int i = 0; i <= N; i++)
     cin >> L[i];
   solve();
-  //  d(L);
   return 0;
 }
