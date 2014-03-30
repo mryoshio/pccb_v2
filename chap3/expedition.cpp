@@ -9,6 +9,7 @@ int N, L, P;
 int A[MAX_L], B[100];
 
 void solve() {
+  int ans = 0;
   priority_queue<int> q;
 
   // first gas station
@@ -22,13 +23,13 @@ void solve() {
         return;
       }
       cout << "[supply] " << q.top() << endl;
-      P += q.top();
-      q.pop();
+      P += q.top(); q.pop();
+      ans++;
     }
     P -= (A[i] - A[i-1]);
     q.push(B[i]);
   }
-  if (P >= L - A[N-1]) puts("OK");
+  if (P >= L - A[N-1]) cout << ans << endl;
   else cout << -1 << endl;
 }
 
