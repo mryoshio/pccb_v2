@@ -3,11 +3,11 @@
 
 using namespace std;
 
-#define MAX_V 100
+// #define MAX_V 100
 
 vector<int> create_undirected_graph() {
   int V, E;
-  vector<int> G[MAX_V];
+  vector<int> G;
   cout << "V E: ";
   cin >> V >> E;
   for (int i = 0; i < E; i++) {
