@@ -2,7 +2,7 @@
 #include <vector>
 #include <queue>
 #include <climits>
-#include "./graph_elements.h"
+#include "../common.h"
 
 #define MAX_N 10000
 
@@ -53,7 +53,7 @@ void solve()
 */
 int main()
 {
-  N = 4; R = 4;
+  N = 4; R = 4; // temporary fixed
   for (int i = 0; i < R; i++) {
     int from, to, cost;
     cout << "FROM TO COST: ";
