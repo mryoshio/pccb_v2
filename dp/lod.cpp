@@ -8,12 +8,11 @@ int N;
 void solve() {
   for (int i = 1; i <= N; i++) {
     int v = 0;
-    for (int j = 1; j <= i; j++) {
+    for (int j = 1; j <= i; j++)
       v = max(v, prices[j] + prices[i-j]);
-    }
     prices[i] = v;
-    cout << "lod" << i << ": " << prices[i] << endl;
   }
+  cout << "lod(" << N << "): " << prices[N] << endl;
 }
 
 int main() {
